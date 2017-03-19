@@ -1,3 +1,4 @@
 'use strict';
 
-const foo = require('assert');
+const assert = require('assert');
+assert(1 == '1');
