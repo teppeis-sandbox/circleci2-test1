@@ -1,4 +1,4 @@
 'use strict';
 
 const assert = require('assert');
-assert(3 == '3');
+assert(4 == '4');
