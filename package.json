@@ -1,0 +1,11 @@
+{
+  "name": "travis-cache-1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "ssh://git@github.com/teppeis-sandbox/travis-cache-1.git",
+  "author": "Teppei Sato <teppeis@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
