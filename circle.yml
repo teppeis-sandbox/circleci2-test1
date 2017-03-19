@@ -1,13 +1,12 @@
 machine:
   environment:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
-
 dependencies:
   override:
-    - yarn
+    - yarn add ava tap-xunit --dev # or you could use npm
   cache_directories:
     - ~/.cache/yarn
-
 test:
   override:
-    - yarn test
+    - mkdir -p $CIRCLE_TEST_REPORTS/reports
+    - ava --tap | tap-xunit > $CIRCLE_TEST_REPORTS/reports/ava.xml

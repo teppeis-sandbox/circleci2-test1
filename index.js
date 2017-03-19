@@ -1,4 +1,4 @@
 'use strict';
 
 const assert = require('assert');
-assert(6 == '6');
+assert(7 == '7');
