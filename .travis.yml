@@ -3,4 +3,5 @@ node_js:
   - "6"
 cache:
   directories:
+    - yarn
     - node_modules
