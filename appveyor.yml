@@ -24,4 +24,7 @@ build: off
 # Cache
 cache:
   - node_modules -> package.json
+  - "%LOCALAPPDATA%\\Yarn"
+
+# Just incremental build number
 version: "{build}"
