@@ -19,3 +19,7 @@ test_script:
 
 # Don't actually build.
 build: off
+
+# Cache
+cache:
+  - node_modules
