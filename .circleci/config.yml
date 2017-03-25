@@ -10,6 +10,8 @@ jobs:
           keys:
             - proj-{{ .Branch }}-{{ checksum "package.json" }}
             - proj-master-{{ checksum "package.json" }}
+      - restore_cache:
+          keys:
             - proj-{{ .Branch }}
             - proj-master
       - run:
