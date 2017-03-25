@@ -3,6 +3,7 @@ jobs:
   build:
     docker:
       - image: node:6
+    working_directory: ~/wd
     steps:
       - checkout
       - run:
