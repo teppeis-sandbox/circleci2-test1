@@ -6,9 +6,18 @@ jobs:
     working_directory: ~/wd
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - proj-{{ .Branch }}-{{ checksum "package.json" }}
+            - proj-{{ .Branch }}
+            - proj-master
       - run:
           name: Install Dependencies
           command: npm install
       - run:
           name: NPM Test
           command: npm test
+      - save_cache:
+          key: proj-{{ .Branch }}-{{ checksum "package.json" }}
+          paths:
+            - node_modules
