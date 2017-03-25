@@ -9,15 +9,20 @@ jobs:
       - restore_cache:
           keys:
             - proj-{{ .Branch }}-{{ checksum "package.json" }}
+            - proj-master-{{ checksum "package.json" }}
             - proj-{{ .Branch }}
             - proj-master
       - run:
-          name: Install Dependencies
+          name: Install dependencies
           command: npm install
       - run:
-          name: NPM Test
+          name: Test
           command: npm test
       - save_cache:
           key: proj-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
             - node_modules
+      - save_cache:
+          key: proj-{{ .Branch }}
+          paths:
+            - ~/.npm
