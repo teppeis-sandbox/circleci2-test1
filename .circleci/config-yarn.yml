@@ -28,6 +28,7 @@ jobs:
             which yarn
             which npm
             yarn run echo
+            ls -la /bin/yarn
             yarn run circleci
             # npm run circleci
       - save_cache:
