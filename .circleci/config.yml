@@ -31,11 +31,17 @@ jobs:
       #       - node_modules
       - run:
           name: yarn cache dir
-          command: YARN_CACHE_DIR=$(yarn cache dir)
+          command: YARN_CACHE_DIR=$(yarn cache dir) && echo $YARN_CACHE_DIR
       - run:
           name: echo yarn cache dir
-          command: echo $YARN_CACHE_DIR
+          command: echo "YARN_CACHE_DIR: ${YARN_CACHE_DIR}"
+      - run:
+          name: export yarn cache dir
+          command: export YARN_CACHE_DIR=$(yarn cache dir) && echo $YARN_CACHE_DIR
+      - run:
+          name: echo yarn cache dir
+          command: echo "YARN_CACHE_DIR: ${YARN_CACHE_DIR}"
       - save_cache:
-          key: proj-yarn-2-{{ .Branch }}
+          key: proj-yarn-3-{{ .Branch }}
           paths:
-            - $YARN_CACHE_DIR
+            - {{ .Environment.YARN_CACHE_DIR }}
