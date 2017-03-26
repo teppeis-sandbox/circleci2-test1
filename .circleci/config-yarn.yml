@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Test
           command: |
-            mkdir -p $TEST_REPORTS/reports
+            mkdir -p $TEST_REPORTS
             yarn run circleci:ava
       - save_cache:
           key: v1-yarn-{{ .Branch }}-{{ epoch }}
