@@ -5,14 +5,23 @@ jobs:
       - image: node:6
     working_directory: ~/wd
     steps:
+      - run:
+          name: list node_modules
+          command: find node_modules
       - checkout
       # - restore_cache:
       #     keys:
       #       - proj-{{ .Branch }}-{{ checksum "package.json" }}
       #       - proj-master-{{ checksum "package.json" }}
+      - run:
+          name: list node_modules
+          command: find node_modules
       - restore_cache:
           keys:
             - proj-yarn-{{ .Branch }}
+      - run:
+          name: list node_modules
+          command: find node_modules
       # - run:
       #     name: Install dependencies
       #     command: yarn add ava tap-xunit --dev
