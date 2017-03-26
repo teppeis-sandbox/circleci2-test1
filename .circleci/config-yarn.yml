@@ -3,6 +3,8 @@ jobs:
   build:
     docker:
       - image: node:6
+    environment:
+      TEST_REPORTS: /tmp/test-reports
     working_directory: ~/wd
     steps:
       - run:
@@ -17,11 +19,20 @@ jobs:
             - v1-yarn-master
       - run:
           name: Install dependencies
-          command: yarn install --no-lockfile
+          command: |
+            yarn install --no-lockfile
+            yarn global add ava tap-xunit
+      # - run:
+      #     name: Test
+      #     command: yarn test
       - run:
           name: Test
-          command: yarn test
+          command: |
+            mkdir -p $TEST_REPORTS/reports
+            ava --tap | tap-xunit > $TEST_REPORTS/reports/ava.xml
       - save_cache:
           key: v1-yarn-{{ .Branch }}-{{ epoch }}
           paths:
             - ~/.cache/yarn
+      - store_test_results:
+          path: /tmp/test-results
