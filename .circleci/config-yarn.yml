@@ -19,8 +19,7 @@ jobs:
             - v1-yarn-master
       - run:
           name: Install dependencies
-          command: |
-            yarn install --no-lockfile
+          command: yarn install --no-lockfile
       - run:
           name: Test
           command: |
@@ -29,7 +28,7 @@ jobs:
             # yarn run circleci
             npm run circleci
       - save_cache:
-          key: v1-yarn-{{ .Branch }}-{{ epoch }}
+          key: v1-yarn-{{ .Branch }}-#{{ .BuildNum }}
           paths:
             - ~/.cache/yarn
       - store_test_results:
