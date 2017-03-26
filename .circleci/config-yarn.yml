@@ -25,8 +25,8 @@ jobs:
           name: Test
           command: |
             mkdir -p $TEST_REPORTS
-            where yarn
-            where npm
+            which yarn
+            which npm
             yarn run echo
             yarn run circleci
             # npm run circleci
