@@ -13,9 +13,6 @@ jobs:
       - restore_cache:
           keys:
             - proj-yarn-{{ .Branch }}
-      - run:
-          name: list .yarn-cache
-          command: find ~/.yarn-cache
       # - run:
       #     name: Install dependencies
       #     command: yarn add ava tap-xunit --dev
@@ -35,6 +32,12 @@ jobs:
       #     key: proj-{{ .Branch }}-{{ checksum "package.json" }}
       #     paths:
       #       - node_modules
+      - run:
+          name: yarn cache dir
+          command: yarn cache dir
+      - run:
+          name: list .yarn-cache
+          command: find ~/.yarn-cache
       - save_cache:
           key: proj-yarn-{{ .Branch }}
           paths:
