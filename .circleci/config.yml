@@ -48,4 +48,5 @@ jobs:
       - save_cache:
           key: proj-yarn-4-{{ .Branch }}
           paths:
-            - {{ .Environment.YARN_CACHE_DIR }}
+            - ~/.cache/yarn
+            # - {{ .Environment.YARN_CACHE_DIR }}
