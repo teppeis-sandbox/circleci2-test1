@@ -31,6 +31,6 @@ jobs:
       #     paths:
       #       - node_modules
       - save_cache:
-          key: v1-{{ .Branch }-{{ epoch }}
+          key: v1-{{ .Branch }}-{{ epoch }}
           paths:
             - ~/.cache/yarn
