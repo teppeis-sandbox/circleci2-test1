@@ -15,11 +15,14 @@ jobs:
             - proj-{{ .Branch }}
             - proj-master
       - run:
+          name: Install yarn
+          command: npm i -g yarn
+      - run:
           name: Install dependencies
-          command: npm install
+          command: yarn add ava tap-xunit --dev
       - run:
           name: Test
-          command: npm test
+          command: yarn test
       - save_cache:
           key: proj-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
@@ -28,3 +31,4 @@ jobs:
           key: proj-{{ .Branch }}
           paths:
             - ~/.npm
+            - ~/.yarn-cache
