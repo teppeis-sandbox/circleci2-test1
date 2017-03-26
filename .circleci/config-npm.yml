@@ -10,19 +10,18 @@ jobs:
           command: |
             node --version
             npm --version
-            yarn --version
       - checkout
       - restore_cache:
           keys:
-            - v1-{{ .Branch }}
-            - v1-master
+            - v1-{{ .Branch }}-{{ checksum "package.json" }}
+            - v1-master-{{ checksum "package.json" }}
       - run:
           name: Install dependencies
-          command: yarn install --no-lockfile
+          command: npm i
       - run:
           name: Test
-          command: yarn test
+          command: npm test
       - save_cache:
-          key: v1-{{ .Branch }}-{{ epoch }}
+          key: v1-{{ .Branch }}-{{ checksum "package.json" }}
           paths:
-            - ~/.cache/yarn
+            - node_modules
