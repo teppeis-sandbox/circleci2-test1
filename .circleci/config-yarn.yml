@@ -25,6 +25,9 @@ jobs:
           name: Test
           command: |
             mkdir -p $TEST_REPORTS
+            where yarn
+            where npm
+            yarn run echo
             yarn run circleci
             # npm run circleci
       - save_cache:

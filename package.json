@@ -8,6 +8,7 @@
     "circleci:lint": "eslint index.js --format junit --output-file $TEST_REPORTS/eslint.xml",
     "circleci:echo": "echo $npm_execpath",
     "circleci": "run-p -cnl circleci:*",
+    "echo": "echo $npm_execpath",
     "lint": "eslint index.js",
     "test": "ava test.js"
   },
