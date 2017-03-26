@@ -12,7 +12,8 @@ jobs:
       #       - proj-master-{{ checksum "package.json" }}
       - restore_cache:
           keys:
-            - proj-yarn-{{ .Branch }}
+            - v1-{{ .Branch }}
+            - v1-master
       # - run:
       #     name: Install dependencies
       #     command: yarn add ava tap-xunit --dev
@@ -26,26 +27,10 @@ jobs:
           name: Test
           command: yarn test
       # - save_cache:
-      #     key: proj-{{ .Branch }}-{{ checksum "package.json" }}
+      #     key: v1-{{ .Branch }}-{{ checksum "package.json" }}
       #     paths:
       #       - node_modules
-      - run:
-          name: yarn cache dir
-          command: |
-            export YARN_CACHE_DIR=$(yarn cache dir)
-            echo "YARN_CACHE_DIR: ${YARN_CACHE_DIR}"
-      - run:
-          name: Test
-          command: echo $YARN_CACHE_DIR
-      # - run:
-      #     name: export yarn cache dir
-      #     command: |
-      #       # export YARN_CACHE_DIR=$(yarn cache dir)
-      #       echo "YARN_CACHE_DIR: ${YARN_CACHE_DIR}"
-      # - run:
-      #     name: echo yarn cache dir
-      #     command: echo "YARN_CACHE_DIR: ${YARN_CACHE_DIR}"
       - save_cache:
-          key: proj-yarn-5-{{ .Branch }}
+          key: v1-{{ .Branch }-{{ epoch }}
           paths:
-            - {{ .Environment.YARN_CACHE_DIR }}
+            - ~/.cache/yarn
