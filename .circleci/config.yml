@@ -45,8 +45,7 @@ jobs:
       # - run:
       #     name: echo yarn cache dir
       #     command: echo "YARN_CACHE_DIR: ${YARN_CACHE_DIR}"
-      # - save_cache:
-      #     key: proj-yarn-4-{{ .Branch }}
-      #     paths:
-      #       - ~/.cache/yarn
-      #       # - {{ .Environment.YARN_CACHE_DIR }}
+      - save_cache:
+          key: proj-yarn-5-{{ .Branch }}
+          paths:
+            - {{ .Environment.YARN_CACHE_DIR }}
