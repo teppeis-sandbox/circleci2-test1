@@ -25,12 +25,9 @@ jobs:
           name: Test
           command: |
             mkdir -p $TEST_REPORTS
-            which yarn
-            which npm
-            yarn run echo
-            ls -la /bin/yarn
-            yarn run circleci
-            # npm run circleci
+            # https://github.com/yarnpkg/yarn/pull/2843
+            # yarn run circleci
+            npm run circleci
       - save_cache:
           key: v1-yarn-{{ .Branch }}-{{ epoch }}
           paths:
