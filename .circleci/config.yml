@@ -36,6 +36,6 @@ jobs:
           name: echo yarn cache dir
           command: echo $YARN_CACHE_DIR
       - save_cache:
-          key: proj-yarn-1-{{ .Branch }}
+          key: proj-yarn-2-{{ .Branch }}
           paths:
             - $YARN_CACHE_DIR
