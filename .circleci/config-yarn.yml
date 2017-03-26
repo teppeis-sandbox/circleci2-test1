@@ -25,8 +25,8 @@ jobs:
           name: Test
           command: |
             mkdir -p $TEST_REPORTS
-            # yarn run circleci
-            npm run circleci
+            yarn run circleci
+            # npm run circleci
       - save_cache:
           key: v1-yarn-{{ .Branch }}-{{ epoch }}
           paths:
