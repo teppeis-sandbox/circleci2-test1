@@ -6,26 +6,26 @@ jobs:
     working_directory: ~/wd
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - proj-{{ .Branch }}-{{ checksum "package.json" }}
-            - proj-master-{{ checksum "package.json" }}
-      - restore_cache:
-          keys:
-            - proj-{{ .Branch }}
-            - proj-master
+      # - restore_cache:
+      #     keys:
+      #       - proj-{{ .Branch }}-{{ checksum "package.json" }}
+      #       - proj-master-{{ checksum "package.json" }}
+      # - restore_cache:
+      #     keys:
+      #       - proj-{{ .Branch }}
+      #       - proj-master
       - run:
           name: Install dependencies
           command: yarn add ava tap-xunit --dev
       - run:
           name: Test
           command: yarn test
-      - save_cache:
-          key: proj-{{ .Branch }}-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-      - save_cache:
-          key: proj-{{ .Branch }}
-          paths:
-            - ~/.npm
-            - ~/.yarn-cache
+      # - save_cache:
+      #     key: proj-{{ .Branch }}-{{ checksum "package.json" }}
+      #     paths:
+      #       - node_modules
+      # - save_cache:
+      #     key: proj-{{ .Branch }}
+      #     paths:
+      #       - ~/.npm
+      #       - ~/.yarn-cache
