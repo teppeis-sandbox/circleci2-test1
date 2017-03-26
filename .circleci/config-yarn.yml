@@ -21,15 +21,11 @@ jobs:
           name: Install dependencies
           command: |
             yarn install --no-lockfile
-            yarn global add ava tap-xunit
-      # - run:
-      #     name: Test
-      #     command: yarn test
       - run:
           name: Test
           command: |
             mkdir -p $TEST_REPORTS/reports
-            ava --tap | tap-xunit > $TEST_REPORTS/reports/ava.xml
+            yarn run circleci:ava
       - save_cache:
           key: v1-yarn-{{ .Branch }}-{{ epoch }}
           paths:

@@ -1,4 +1,7 @@
 'use strict';
 
-const assert = require('assert');
-assert.equal(17, 18);
+function add(a, b) {
+  return a + b;
+}
+
+module.exports = add;

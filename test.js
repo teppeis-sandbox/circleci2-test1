@@ -1,11 +1,16 @@
 import test from 'ava';
+import add from './';
 
-test('foo', t => {
+test('empty test', t => {
 	t.pass();
 });
 
-test('bar', async t => {
+test('async test', async t => {
 	const bar = Promise.resolve('bar');
 
 	t.is(await bar, 'bar');
+});
+
+test('add', t => {
+	t.is(add(1, 2), 4);
 });
