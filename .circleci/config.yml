@@ -10,7 +10,7 @@ jobs:
           command: |
             echo "node: $(node --version)"
             echo "npm: $(npm --version)"
-            echo "yarn: $(yarn --version"
+            echo "yarn: $(yarn --version)"
       - checkout
       - restore_cache:
           keys:
