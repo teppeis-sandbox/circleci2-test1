@@ -1,8 +1,8 @@
 {
-  "name": "travis-cache-1",
+  "name": "circleci2-test1",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "ssh://git@github.com/teppeis-sandbox/travis-cache-1.git",
+  "repository": "ssh://git@github.com/teppeis-sandbox/circleci2-test1.git",
   "scripts": {
     "test": "ava"
   },
