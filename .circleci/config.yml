@@ -19,7 +19,10 @@ jobs:
       #     command: yarn add ava tap-xunit --dev
       - run:
           name: Install dependencies
-          command: npm i
+          command: yarn install
+      # - run:
+      #     name: Install dependencies
+      #     command: npm i
       - run:
           name: Test
           command: yarn test
