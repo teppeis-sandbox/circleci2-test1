@@ -37,7 +37,7 @@ jobs:
           command: yarn cache dir
       - run:
           name: list .yarn-cache
-          command: find ~/.yarn-cache
+          command: find ~/.cache/yarn
       - save_cache:
           key: proj-yarn-1-{{ .Branch }}
           paths:
