@@ -4,7 +4,7 @@
   "main": "index.js",
   "repository": "ssh://git@github.com/teppeis-sandbox/circleci2-test1.git",
   "scripts": {
-    "circleci:unittest": "ava test.js --tap | tap-xunit > $TEST_REPORTS/ava.xml",
+    "circleci:unit-test": "ava test.js --tap | tap-xunit > $TEST_REPORTS/ava.xml",
     "circleci:lint": "eslint index.js --format junit --output-file $TEST_REPORTS/eslint.xml",
     "lint": "eslint index.js",
     "test": "ava"
