@@ -15,9 +15,6 @@ jobs:
             - proj-{{ .Branch }}
             - proj-master
       - run:
-          name: Install yarn
-          command: npm i -g yarn
-      - run:
           name: Install dependencies
           command: yarn add ava tap-xunit --dev
       - run:
