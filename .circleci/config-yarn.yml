@@ -25,6 +25,7 @@ jobs:
           name: Test
           command: |
             mkdir -p $TEST_REPORTS
+            yarn run circleci:lint
             yarn run circleci:ava
       - save_cache:
           key: v1-yarn-{{ .Branch }}-{{ epoch }}

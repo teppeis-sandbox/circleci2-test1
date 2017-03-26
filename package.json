@@ -4,8 +4,9 @@
   "main": "index.js",
   "repository": "ssh://git@github.com/teppeis-sandbox/circleci2-test1.git",
   "scripts": {
-    "circleci:ava": "ava --tap | tap-xunit > $TEST_REPORTS/ava.xml",
-    "circleci:eslint": "ava --tap | tap-xunit > $TEST_REPORTS/ava.xml",
+    "circleci:unittest": "ava test.js --tap | tap-xunit > $TEST_REPORTS/ava.xml",
+    "circleci:lint": "eslint index.js --format junit --output-file $TEST_REPORTS/eslint.xml",
+    "lint": "eslint index.js",
     "test": "ava"
   },
   "author": "Teppei Sato <teppeis@gmail.com>",
@@ -15,6 +16,7 @@
   },
   "devDependencies": {
     "ava": "^0.18.2",
+    "eslint": "^3.18.0",
     "power-assert": "^1.4.2",
     "tap-xunit": "^1.7.0"
   }
