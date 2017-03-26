@@ -35,7 +35,7 @@ jobs:
             export YARN_CACHE_DIR=$(yarn cache dir)
             echo "YARN_CACHE_DIR: ${YARN_CACHE_DIR}"
       - run:
-          name: yarn cache dir
+          name: yarn cache dir 2
           command: echo "YARN_CACHE_DIR: ${YARN_CACHE_DIR}"
       # - run:
       #     name: export yarn cache dir
