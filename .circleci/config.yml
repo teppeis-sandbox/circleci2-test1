@@ -13,9 +13,6 @@ jobs:
       #     keys:
       #       - proj-{{ .Branch }}-{{ checksum "package.json" }}
       #       - proj-master-{{ checksum "package.json" }}
-      - run:
-          name: list node_modules
-          command: find node_modules
       - restore_cache:
           keys:
             - proj-yarn-{{ .Branch }}
