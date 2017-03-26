@@ -32,7 +32,7 @@ jobs:
       - run:
           name: yarn cache dir
           command: |
-            # YARN_CACHE_DIR=$(yarn cache dir)
+            YARN_CACHE_DIR=$(yarn cache dir)
             echo "YARN_CACHE_DIR: ${YARN_CACHE_DIR}"
       # - run:
       #     name: echo yarn cache dir
