@@ -14,9 +14,9 @@ jobs:
       #     keys:
       #       - proj-{{ .Branch }}
       #       - proj-master
-      - run:
-          name: Install dependencies
-          command: yarn add ava tap-xunit --dev
+      # - run:
+      #     name: Install dependencies
+      #     command: yarn add ava tap-xunit --dev
       - run:
           name: Test
           command: yarn test
