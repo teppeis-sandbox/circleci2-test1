@@ -6,8 +6,9 @@
   "scripts": {
     "circleci:unit-test": "ava test.js --tap | tap-xunit > $TEST_REPORTS/ava.xml",
     "circleci:lint": "eslint index.js --format junit --output-file $TEST_REPORTS/eslint.xml",
+    "circleci": "run-p -cnl circleci:*",
     "lint": "eslint index.js",
-    "test": "ava"
+    "test": "ava test.js"
   },
   "author": "Teppei Sato <teppeis@gmail.com>",
   "license": "MIT",
@@ -17,6 +18,7 @@
   "devDependencies": {
     "ava": "^0.18.2",
     "eslint": "^3.18.0",
+    "npm-run-all": "^4.0.2",
     "power-assert": "^1.4.2",
     "tap-xunit": "^1.7.0"
   }

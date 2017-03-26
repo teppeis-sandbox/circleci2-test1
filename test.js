@@ -12,6 +12,6 @@ test('async test', async t => {
 });
 
 test('add', t => {
-	// t.is(add(1, 2), 4);
-	t.is(add(1, 2), 3);
+	t.is(add(1, 2), 4);
+	// t.is(add(1, 2), 3);
 });
