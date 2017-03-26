@@ -19,9 +19,6 @@ jobs:
       - run:
           name: Install dependencies
           command: yarn install --no-lockfile
-      - run:
-          name: list node_modules
-          command: find node_modules
       # - run:
       #     name: Install dependencies
       #     command: npm i
@@ -34,11 +31,11 @@ jobs:
       #       - node_modules
       - run:
           name: yarn cache dir
-          command: yarn cache dir
+          command: YARN_CACHE_DIR=$(yarn cache dir)
       - run:
-          name: list .yarn-cache
-          command: find ~/.cache/yarn
+          name: echo yarn cache dir
+          command: echo $YARN_CACHE_DIR
       - save_cache:
           key: proj-yarn-1-{{ .Branch }}
           paths:
-            - $(yarn cache dir)
+            - $YARN_CACHE_DIR
