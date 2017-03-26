@@ -8,8 +8,7 @@ jobs:
       - run:
           name: Versions
           command: |
-            echo "node: $(node --version)"
-            echo "npm: $(npm --version)"
+            npm version
       - checkout
       - restore_cache:
           keys:

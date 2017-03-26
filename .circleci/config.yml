@@ -8,9 +8,8 @@ jobs:
       - run:
           name: Versions
           command: |
-            echo "node: $(node --version)"
+            yarn versions
             echo "npm: $(npm --version)"
-            echo "yarn: $(yarn --version)"
       - checkout
       - restore_cache:
           keys:
